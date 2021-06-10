@@ -4,6 +4,13 @@ This repo contains code to configure an Azure AD demo tenant. Using Terraform, P
 
 ## Terraform
 
+```powershell
+# Get AZ storage key.
+(Get-AzStorageAccountKey -ResourceGroupName terraform-state -Name mdterraform)[0].value
+# Get service principal details.
+Get-AzADServicePrincipal -DisplayName 'terraform-azuread'
+```
+
 Terraform State in Azure Storage
 
 ```bash

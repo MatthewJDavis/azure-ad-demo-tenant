@@ -25,3 +25,15 @@ resource "azuread_group" "security" {
   description = "Security team."
   prevent_duplicate_names = true
 }
+
+resource "azuread_group" "identity" {
+  display_name = "identity-team"
+  description = "Identity team."
+  prevent_duplicate_names = true
+}
+
+resource "azuread_group" "developers" {
+  display_name = "developers"
+  description = "All Developers."
+  prevent_duplicate_names = true
+}
