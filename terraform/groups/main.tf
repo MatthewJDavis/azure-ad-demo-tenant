@@ -37,3 +37,9 @@ resource "azuread_group" "developers" {
   description = "All Developers."
   prevent_duplicate_names = true
 }
+
+resource "azuread_group" "hr" {
+  display_name = "HR"
+  description = "All of HR."
+  prevent_duplicate_names = true
+}
