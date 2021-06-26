@@ -17,6 +17,11 @@ variable "admin_password" {
   sensitive   = true
 }
 
+variable "my_ip" {  
+  description = "IP address to allow via NSG"  
+  type        = string
+}
+
 resource "azurerm_resource_group" "ad-vms-rg" {
   name     = "ad-vms-rg"
   location = "eastus2"
@@ -51,7 +56,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
-    source_address_prefix      = "142.186.4.19/32"
+    source_address_prefix      = var.my_ip
     destination_address_prefix = "*"
   }
 
@@ -63,7 +68,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "5986"
-    source_address_prefix      = "142.186.4.19/32"
+    source_address_prefix      = var.my_ip
     destination_address_prefix = "*"
   }
 
