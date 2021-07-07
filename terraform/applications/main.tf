@@ -12,6 +12,12 @@ provider "azuread" {
   version = "=1.5.0"
 }
 
+variable "app_password" {  
+  description = "Used for application secret"  
+  type        = string  
+  sensitive   = true
+}
+
 resource "azuread_application" "demo" {
   display_name = "DemoApp1"
   homepage                   = "http://localhost"
