@@ -24,3 +24,11 @@ export ARM_CLIENT_ID="00000000-0000-0000-0000-000000000000"
 export ARM_TENANT_ID="10000000-2000-3000-4000-500000000000"
  export ARM_CLIENT_SECRET="00000000-0000-0000-0000-000000000000"
 ```
+
+### Set application password
+
+Set as an environment variable.
+
+```bash
+ export TF_VAR_app_password=''
+```
